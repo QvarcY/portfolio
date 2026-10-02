@@ -46,6 +46,16 @@ jobs:
           cp -R data .deploy/data
           cp -R en .deploy/en
 
+          COMMIT_SHA="$(git rev-parse HEAD)"
+          DEPLOYED_AT="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+
+          cat > .deploy/deploy-info.json <<EOF
+          {
+            "commit": "$COMMIT_SHA",
+            "deployedAt": "$DEPLOYED_AT"
+          }
+          EOF
+
           echo "Deploy package:"
           find .deploy -maxdepth 2 -type f | sort
 
