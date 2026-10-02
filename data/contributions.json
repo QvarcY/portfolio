@@ -1,0 +1,75 @@
+{
+  "count": 10,
+  "items": [
+    {
+      "repo": "emrebalasar/larascan",
+      "number": 7,
+      "title": "feat: add --output option for report files",
+      "url": "https://github.com/emrebalasar/larascan/pull/7",
+      "merged_at": "2026-10-02T14:04:42Z"
+    },
+    {
+      "repo": "PranavMin/LazyTO",
+      "number": 5,
+      "title": "feat: add dark mode to status page",
+      "url": "https://github.com/PranavMin/LazyTO/pull/5",
+      "merged_at": "2026-10-02T02:04:19Z"
+    },
+    {
+      "repo": "Dhruv8525-Dex/8bitSpace-a-pixel-themed-cloud-storage-app",
+      "number": 15,
+      "title": "Show search-specific empty state",
+      "url": "https://github.com/Dhruv8525-Dex/8bitSpace-a-pixel-themed-cloud-storage-app/pull/15",
+      "merged_at": "2026-10-02T01:31:52Z"
+    },
+    {
+      "repo": "Purnavu-12/BuildWithMe-UI",
+      "number": 14,
+      "title": "fix(command-search): add keyboard result navigation",
+      "url": "https://github.com/Purnavu-12/BuildWithMe-UI/pull/14",
+      "merged_at": "2026-09-27T20:43:59Z"
+    },
+    {
+      "repo": "TheCodeHeist-Coder/Rexial",
+      "number": 166,
+      "title": "fix: normalize quiz join inputs",
+      "url": "https://github.com/TheCodeHeist-Coder/Rexial/pull/166",
+      "merged_at": "2026-09-27T13:08:27Z"
+    },
+    {
+      "repo": "baipix/baipix",
+      "number": 41,
+      "title": "feat: animate selection outline",
+      "url": "https://github.com/baipix/baipix/pull/41",
+      "merged_at": "2026-09-27T12:19:17Z"
+    },
+    {
+      "repo": "baipix/baipix",
+      "number": 40,
+      "title": "feat: fit canvas on zoom label double-click",
+      "url": "https://github.com/baipix/baipix/pull/40",
+      "merged_at": "2026-09-27T11:46:37Z"
+    },
+    {
+      "repo": "baipix/baipix",
+      "number": 37,
+      "title": "feat: add visible shortcuts help button",
+      "url": "https://github.com/baipix/baipix/pull/37",
+      "merged_at": "2026-09-27T08:58:12Z"
+    },
+    {
+      "repo": "kiril6/vibeaudio",
+      "number": 10,
+      "title": "Fix Windows wrapper for executable paths with spaces",
+      "url": "https://github.com/kiril6/vibeaudio/pull/10",
+      "merged_at": "2026-09-26T22:42:50Z"
+    },
+    {
+      "repo": "kiril6/vibeaudio",
+      "number": 11,
+      "title": "Fix preview volume on volume-less backends",
+      "url": "https://github.com/kiril6/vibeaudio/pull/11",
+      "merged_at": "2026-09-26T22:26:22Z"
+    }
+  ]
+}

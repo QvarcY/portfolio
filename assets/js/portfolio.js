@@ -127,6 +127,110 @@
     });
   });
 
+  const contributionBlocks = document.querySelectorAll('[data-contributions]');
+
+  contributionBlocks.forEach(async block => {
+    const source = block.dataset.source;
+    const card = block.closest('.repo-contributions');
+    const count = card?.querySelector('[data-contribution-count]');
+
+    if (!source) return;
+
+    try {
+      const url = new URL(source, location.href);
+
+      url.searchParams.set(
+        'v',
+        String(Math.floor(Date.now() / 43200000))
+      );
+
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const data = await response.json();
+      const items = Array.isArray(data.items) ? data.items : [];
+
+      if (count) {
+        count.textContent = String(items.length);
+      }
+
+      const limit = Number.parseInt(block.dataset.limit || '', 10);
+      const visibleItems = Number.isFinite(limit) && limit > 0
+        ? items.slice(0, limit)
+        : items;
+
+      const fragment = document.createDocumentFragment();
+
+      visibleItems.forEach(item => {
+        const link = document.createElement('a');
+
+        link.className = 'contribution-item';
+        link.href = item.url;
+        link.target = '_blank';
+        link.rel = 'external noopener noreferrer';
+
+        const copy = document.createElement('span');
+        copy.className = 'contribution-copy';
+
+        const meta = document.createElement('span');
+        meta.className = 'contribution-meta';
+
+        const repo = document.createElement('span');
+        repo.textContent = item.repo;
+
+        const pr = document.createElement('span');
+        pr.textContent =
+          `${block.dataset.prLabel || 'PR'} #${item.number}`;
+
+        meta.append(repo, pr);
+
+        if (item.merged_at) {
+          const mergedDate = new Date(item.merged_at);
+
+          if (!Number.isNaN(mergedDate.getTime())) {
+            const date = document.createElement('span');
+
+            const day = String(mergedDate.getDate()).padStart(2, '0');
+            const month = String(mergedDate.getMonth() + 1).padStart(2, '0');
+            const year = mergedDate.getFullYear();
+
+            date.textContent = `${day}.${month}.${year}`;
+
+            meta.append(date);
+          }
+        }
+
+        const title = document.createElement('strong');
+        title.className = 'contribution-title';
+        title.textContent = item.title;
+
+        copy.append(meta, title);
+
+        const status = document.createElement('span');
+        status.className = 'contribution-status';
+        status.textContent =
+          block.dataset.mergedLabel || 'Merged';
+
+        link.append(copy, status);
+        fragment.append(link);
+      });
+
+      block.replaceChildren(fragment);
+    } catch (_) {
+      const error = document.createElement('p');
+
+      error.className = 'contribution-error';
+      error.textContent =
+        block.dataset.errorLabel ||
+        'Could not load contributions.';
+
+      block.replaceChildren(error);
+    }
+  });
+
   const progress = document.querySelector('.page-progress span');
   const mainSections = [...document.querySelectorAll('main section[id]')];
   const workChapters = [...document.querySelectorAll('.work-chapter[id]')];
