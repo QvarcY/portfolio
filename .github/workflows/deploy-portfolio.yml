@@ -1,0 +1,65 @@
+name: Deploy portfolio
+
+on:
+  push:
+    branches:
+      - main
+  workflow_run:
+    workflows:
+      - Sync contributions
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-production-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Prepare deploy package
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          rm -rf .deploy
+          mkdir -p .deploy
+
+          cp index.html .deploy/
+          cp .htaccess .deploy/
+          cp favicon.ico .deploy/
+          cp site.webmanifest .deploy/
+
+          cp -R assets .deploy/assets
+          cp -R data .deploy/data
+          cp -R en .deploy/en
+
+          echo "Deploy package:"
+          find .deploy -maxdepth 2 -type f | sort
+
+      - name: Deploy via explicit FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./.deploy/
+          server-dir: ./
+          state-name: .ftp-deploy-sync-state.json
+          log-level: standard
+          security: strict
+          timeout: 60000
