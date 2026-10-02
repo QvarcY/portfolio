@@ -1,0 +1,23 @@
+{
+  "name": "Ingars Neija — portfolio",
+  "short_name": "Ingars Neija",
+  "description": "Ingara Neijas portfolio — digitālie projekti, SEO, saturs, e-komercija, GitHub rīki, dati, projektu koordinēšana, 3D druka un lāzerapstrāde.",
+  "lang": "lv-LV",
+  "start_url": "/portfolio/",
+  "scope": "/portfolio/",
+  "display": "standalone",
+  "background_color": "#06080d",
+  "theme_color": "#06080d",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

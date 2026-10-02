@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:urlset xmlns:ns0="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:ns1="http://www.google.com/schemas/sitemap-image/1.1">
+  <ns0:url>
+    <ns0:loc>https://kas.id.lv/portfolio/</ns0:loc>
+    <ns0:lastmod>2026-09-28</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+    <ns1:image>
+      <ns1:loc>https://kas.id.lv/portfolio/assets/images/ingars-neija-portfolio-og.jpg</ns1:loc>
+      <ns1:title>Ingars Neija — digitālie projekti, SEO, saturs, GitHub un praktiski risinājumi</ns1:title>
+    </ns1:image>
+    <ns1:image>
+      <ns1:loc>https://kas.id.lv/portfolio/assets/images/ingars-neija.jpg</ns1:loc>
+      <ns1:title>Ingars Neija</ns1:title>
+    </ns1:image>
+  </ns0:url>
+<ns0:url><ns0:loc>https://kas.id.lv/portfolio/en/</ns0:loc><ns0:lastmod>2026-09-28</ns0:lastmod><ns0:changefreq>monthly</ns0:changefreq><ns0:priority>0.8</ns0:priority></ns0:url></ns0:urlset>
