@@ -1,6 +1,13 @@
 {
-  "count": 11,
+  "count": 12,
   "items": [
+    {
+      "repo": "quanta-js/quanta",
+      "number": 194,
+      "title": "fix(tooling): make verification scripts work on Windows",
+      "url": "https://github.com/quanta-js/quanta/pull/194",
+      "merged_at": "2026-10-03T09:21:35Z"
+    },
     {
       "repo": "reticlehq/reticle",
       "number": 1307,
