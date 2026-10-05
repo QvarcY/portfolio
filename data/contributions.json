@@ -1,6 +1,13 @@
 {
-  "count": 12,
+  "count": 13,
   "items": [
+    {
+      "repo": "Dissonance-Eip/ui",
+      "number": 96,
+      "title": "fix: set minimum application window size",
+      "url": "https://github.com/Dissonance-Eip/ui/pull/96",
+      "merged_at": "2026-10-05T15:39:18Z"
+    },
     {
       "repo": "quanta-js/quanta",
       "number": 194,
