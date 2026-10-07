@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">LatNe — Programmē latviski</title>
+<desc id="desc">LatNe open-source programming language visual with Latvian source code and compiler-stage badges.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#08090c"/>
+    <stop offset="1" stop-color="#0b0d11"/>
+  </linearGradient>
+  <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#111319"/>
+    <stop offset="1" stop-color="#0c0e12"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="48" cy="54" r="5" fill="#e54567"/>
+<text x="66" y="60" fill="#ed496b" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" letter-spacing="2">ATVĒRTĀ PIRMKODA PROJEKTS</text>
+
+<text x="48" y="190" fill="#f4f1ed" font-family="Segoe UI,Arial,sans-serif" font-size="88" font-weight="800" letter-spacing="-4">Programmē</text>
+<text x="48" y="282" fill="#e54567" font-family="Segoe UI,Arial,sans-serif" font-size="88" font-weight="800" letter-spacing="-4">latviski.</text>
+<text x="48" y="340" fill="#c4c8d0" font-family="Segoe UI,Arial,sans-serif" font-size="22">LatNe ir neatkarīga latviska programmēšanas valoda</text>
+<text x="48" y="374" fill="#c4c8d0" font-family="Segoe UI,Arial,sans-serif" font-size="22">un topošā izstrādes vide ar savu sintaksi un AST.</text>
+
+<rect x="48" y="425" width="220" height="50" rx="10" fill="#c92549"/>
+<text x="78" y="457" fill="#fff" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="800">★ QvarcY / LatNe</text>
+<rect x="282" y="425" width="180" height="50" rx="10" fill="none" stroke="#363a42"/>
+<text x="310" y="457" fill="#f2f0ed" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="700">Līdzdarboties →</text>
+
+<rect x="525" y="82" width="620" height="510" rx="24" fill="url(#panel)" stroke="#2b2e35"/>
+<line x1="525" y1="132" x2="1145" y2="132" stroke="#2b2e35"/>
+<circle cx="548" cy="108" r="6" fill="#a82d46"/><circle cx="567" cy="108" r="6" fill="#42454e"/><circle cx="586" cy="108" r="6" fill="#42454e"/>
+<text x="815" y="113" fill="#858997" font-family="Consolas,monospace" font-size="13">piemers.lat</text>
+<circle cx="1080" cy="108" r="4" fill="#65d7a8"/>
+<text x="1092" y="113" fill="#8e95a5" font-family="Consolas,monospace" font-size="11" letter-spacing="2">LATNE</text>
+
+<g font-family="Consolas,monospace" font-size="17">
+  <text x="558" y="185" fill="#ef4b6d" font-weight="700">eksportē asinhroni darbība</text>
+  <text x="812" y="185" fill="#f0f1f3"> ielādēLietotājus() {</text>
+  <text x="578" y="222" fill="#ef4b6d" font-weight="700">nemainīgs</text><text x="673" y="222" fill="#f0f1f3"> dati =</text>
+  <text x="598" y="259" fill="#ef4b6d" font-weight="700">gaidi</text><text x="651" y="259" fill="#f0f1f3"> lasiDatus("lietotaji.json")</text>
+  <text x="578" y="316" fill="#ef4b6d" font-weight="700">kam</text><text x="620" y="316" fill="#f0f1f3"> (nemainīgs ieraksts ar dati) {</text>
+  <text x="598" y="353" fill="#ef4b6d" font-weight="700">ja</text><text x="624" y="353" fill="#f0f1f3"> (ieraksts.vārds == </text><text x="820" y="353" fill="#ef4b6d" font-weight="700">nekas</text><text x="870" y="353" fill="#f0f1f3">) {</text>
+  <text x="618" y="390" fill="#ef4b6d" font-weight="700">turpini</text>
+  <text x="598" y="427" fill="#f0f1f3">}</text>
+  <text x="578" y="464" fill="#f0f1f3">}</text>
+  <text x="558" y="514" fill="#ef4b6d" font-weight="700">atgriez</text><text x="625" y="514" fill="#f0f1f3"> dati</text>
+  <text x="558" y="551" fill="#f0f1f3">}</text>
+</g>
+
+<line x1="525" y1="548" x2="1145" y2="548" stroke="#2b2e35"/>
+<g font-family="Segoe UI,Arial,sans-serif" font-size="12" font-weight="700">
+  <rect x="546" y="563" width="150" height="36" rx="9" fill="#0d1714" stroke="#244338"/>
+  <text x="560" y="586" fill="#77d9ae">✓ Leksiskais analizators</text>
+  <rect x="707" y="563" width="164" height="36" rx="9" fill="#0d1714" stroke="#244338"/>
+  <text x="721" y="586" fill="#77d9ae">✓ Sintaktiskais analizators</text>
+  <rect x="882" y="563" width="74" height="36" rx="9" fill="#0d1714" stroke="#244338"/>
+  <text x="899" y="586" fill="#77d9ae">✓ AST</text>
+  <rect x="967" y="563" width="152" height="36" rx="9" fill="#111319" stroke="#333741"/>
+  <text x="984" y="586" fill="#89909d">○ Izpilde top</text>
+</g>
+</svg>
