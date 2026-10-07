@@ -129,10 +129,33 @@
 
   const contributionBlocks = document.querySelectorAll('[data-contributions]');
 
+  const formatContributionDate = value => {
+    if (!value) return '—';
+
+    const date = new Date(value);
+
+    if (Number.isNaN(date.getTime())) return '—';
+
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+
+    return `${day}.${month}.${year}`;
+  };
+
   contributionBlocks.forEach(async block => {
     const source = block.dataset.source;
     const card = block.closest('.repo-contributions');
+    const chapter = block.closest('.work-chapter');
+    const latestCard = chapter?.querySelector('[data-latest-contribution]');
     const count = card?.querySelector('[data-contribution-count]');
+
+    const latestMeta = latestCard?.querySelector('[data-latest-meta]');
+    const latestTitle = latestCard?.querySelector('[data-latest-title]');
+    const latestRepo = latestCard?.querySelector('[data-latest-repo]');
+    const latestPr = latestCard?.querySelector('[data-latest-pr]');
+    const latestDate = latestCard?.querySelector('[data-latest-date]');
+    const latestLink = latestCard?.querySelector('[data-latest-link]');
 
     if (!source) return;
 
@@ -152,15 +175,50 @@
 
       const data = await response.json();
       const items = Array.isArray(data.items) ? data.items : [];
+      const latest = items[0];
 
       if (count) {
         count.textContent = String(items.length);
       }
 
+      if (latest) {
+        if (latestMeta) {
+          latestMeta.textContent =
+            `${latest.repo} · ${block.dataset.prLabel || 'PR'} #${latest.number}`;
+        }
+
+        if (latestTitle) latestTitle.textContent = latest.title;
+        if (latestRepo) latestRepo.textContent = latest.repo;
+        if (latestPr) latestPr.textContent = `#${latest.number}`;
+        if (latestDate) latestDate.textContent = formatContributionDate(latest.merged_at);
+
+        if (latestLink) {
+          latestLink.href = latest.url;
+          latestLink.hidden = false;
+        }
+      } else if (latestTitle) {
+        latestTitle.textContent =
+          block.dataset.latestEmptyLabel ||
+          'No merged upstream contributions yet.';
+      }
+
       const limit = Number.parseInt(block.dataset.limit || '', 10);
+      const history = items.slice(1);
       const visibleItems = Number.isFinite(limit) && limit > 0
-        ? items.slice(0, limit)
-        : items;
+        ? history.slice(0, limit)
+        : history;
+
+      if (!visibleItems.length) {
+        const empty = document.createElement('p');
+
+        empty.className = 'contribution-loading';
+        empty.textContent =
+          block.dataset.emptyLabel ||
+          'No other merged contributions yet.';
+
+        block.replaceChildren(empty);
+        return;
+      }
 
       const fragment = document.createDocumentFragment();
 
@@ -188,19 +246,10 @@
         meta.append(repo, pr);
 
         if (item.merged_at) {
-          const mergedDate = new Date(item.merged_at);
+          const date = document.createElement('span');
+          date.textContent = formatContributionDate(item.merged_at);
 
-          if (!Number.isNaN(mergedDate.getTime())) {
-            const date = document.createElement('span');
-
-            const day = String(mergedDate.getDate()).padStart(2, '0');
-            const month = String(mergedDate.getMonth() + 1).padStart(2, '0');
-            const year = mergedDate.getFullYear();
-
-            date.textContent = `${day}.${month}.${year}`;
-
-            meta.append(date);
-          }
+          meta.append(date);
         }
 
         const title = document.createElement('strong');
@@ -220,6 +269,12 @@
 
       block.replaceChildren(fragment);
     } catch (_) {
+      if (latestTitle) {
+        latestTitle.textContent =
+          block.dataset.latestErrorLabel ||
+          'Could not load the latest contribution.';
+      }
+
       const error = document.createElement('p');
 
       error.className = 'contribution-error';
