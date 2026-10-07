@@ -1,6 +1,13 @@
 {
-  "count": 13,
+  "count": 14,
   "items": [
+    {
+      "repo": "nuxt/nuxt",
+      "number": 36430,
+      "title": "fix(nuxt): preserve onServerPrefetch for useId hydration",
+      "url": "https://github.com/nuxt/nuxt/pull/36430",
+      "merged_at": "2026-10-07T17:30:57Z"
+    },
     {
       "repo": "Dissonance-Eip/ui",
       "number": 96,
