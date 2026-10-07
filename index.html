@@ -482,7 +482,7 @@
 </script>
 <script>document.documentElement.classList.add('js');</script>
 <link href="assets/css/portfolio.css?v=20261002-v16" rel="stylesheet"/>
-<script defer="" src="assets/js/portfolio.js?v=20261002-v16"></script>
+<script defer="" src="assets/js/portfolio.js?v=20261007-v17"></script>
 </head>
 <body>
 <div aria-hidden="true" class="top-anchor" id="top"></div>
@@ -700,16 +700,22 @@
 </div>
 <p>Mergeoti labojumi un funkcijas citu autoru open-source projektos.</p>
 </div>
-<article class="repo-card repo-impact glow-card reveal">
-<div class="impact-copy"><div class="project-kicker"><span class="repo-badge">External contribution</span><span>VibeAudio · JavaScript · Windows</span></div><h4>Divi labojumi, kas nonāca upstream release</h4><p>VibeAudio projektā uz Windows tika atrasti un izlaboti divi reāli defekti. Abi PR tika maintainer pārbaudīti un merge'oti, pilnā testa kopa sasniedza 52/52, un labojumi tika publicēti <strong>v0.8.1</strong> ar QvarcY credit release piezīmēs.</p><div class="impact-stats"><span><b>2</b><small>merged PR</small></span><span><b>52/52</b><small>testi</small></span><span><b>v0.8.1</b><small>shipped</small></span></div><p class="impact-note">Maintainer norādīja, ka projekts līdz tam nebija reāli palaists uz Windows un vienu no atrastajām kļūdām CI konstrukcijas dēļ nevarēja atklāt.</p></div>
-<div class="impact-links"><a class="text-link" href="https://github.com/kiril6/vibeaudio/pull/10" rel="external noopener noreferrer" target="_blank">PR #10 ↗</a><a class="text-link" href="https://github.com/kiril6/vibeaudio/pull/11" rel="external noopener noreferrer" target="_blank">PR #11 ↗</a><a class="text-link" href="https://github.com/kiril6/vibeaudio/releases/tag/v0.8.1" rel="external noopener noreferrer" target="_blank">Release v0.8.1 ↗</a></div>
+<article class="repo-card repo-impact glow-card reveal" data-latest-contribution>
+<div class="impact-copy">
+<div class="project-kicker"><span class="repo-badge">Jaunākais upstream</span><span data-latest-meta>GitHub · ielādē…</span></div>
+<h4 data-latest-title>Ielādē jaunāko mergeoto ieguldījumu…</h4>
+<p>Šeit automātiski tiek izcelta jaunākā mergeotā kontribūcija citā open-source projektā.</p>
+<div class="impact-stats"><span><b data-latest-repo>—</b><small>repo</small></span><span><b data-latest-pr>—</b><small>PR</small></span><span><b data-latest-date>—</b><small>merged</small></span></div>
+<p class="impact-note">Kad tiek mergeota jauna upstream kontribūcija, šī kartīte automātiski pārslēdzas uz to, bet iepriekšējie ieguldījumi paliek sarakstā zemāk.</p>
+</div>
+<div class="impact-links"><a class="text-link" data-latest-link href="#" rel="external noopener noreferrer" target="_blank" hidden>Atvērt PR ↗</a></div>
 </article>
 <article class="repo-card repo-contributions glow-card reveal">
 <div class="contribution-head">
 <div>
 <div class="project-kicker"><span class="repo-badge">Merged PR</span><span>GitHub · ārējie projekti</span></div>
 <h4>Mergeotie ieguldījumi</h4>
-<p><strong class="contribution-count" data-contribution-count>—</strong> mergeoti PR kopā · redzami 5 jaunākie.</p>
+<p><strong class="contribution-count" data-contribution-count>—</strong> mergeoti PR kopā · jaunākais izcelts augstāk, zemāk redzami vēl līdz 5.</p>
 </div>
 <a class="text-link contribution-all-link" href="https://github.com/search?q=is%3Apr+author%3AQvarcY+is%3Amerged+-user%3AQvarcY&amp;type=pullrequests" rel="external noopener noreferrer" target="_blank">Skatīt GitHub ↗</a>
 </div>
@@ -722,6 +728,9 @@
   data-pr-label="PR"
   data-merged-label="Merged"
   data-error-label="Neizdevās ielādēt ieguldījumu sarakstu."
+  data-empty-label="Citu mergeotu ieguldījumu vēl nav."
+  data-latest-empty-label="Vēl nav mergeotu upstream ieguldījumu."
+  data-latest-error-label="Neizdevās ielādēt jaunāko ieguldījumu."
 >
 <p class="contribution-loading">Ielādē ieguldījumu sarakstu…</p>
 </div>
