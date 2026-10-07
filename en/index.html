@@ -467,7 +467,7 @@
 </script>
 <script>document.documentElement.classList.add('js');</script>
 <link href="../assets/css/portfolio.css?v=20261002-v16" rel="stylesheet"/>
-<script defer="" src="../assets/js/portfolio.js?v=20261002-v16"></script>
+<script defer="" src="../assets/js/portfolio.js?v=20261007-v17"></script>
 </head>
 <body>
 <div aria-hidden="true" class="top-anchor" id="top"></div>
@@ -680,16 +680,22 @@
 </div>
 <p>Merged fixes and features contributed to open-source projects owned by others.</p>
 </div>
-<article class="repo-card repo-impact glow-card reveal">
-<div class="impact-copy"><div class="project-kicker"><span class="repo-badge">External contribution</span><span>VibeAudio · JavaScript · Windows</span></div><h4>Two fixes that shipped upstream</h4><p>Two real Windows defects were identified and fixed in VibeAudio. Both PRs were maintainer-reviewed and merged, the full suite reached 52/52, and the fixes shipped in <strong>v0.8.1</strong> with QvarcY credited in the release notes.</p><div class="impact-stats"><span><b>2</b><small>merged PRs</small></span><span><b>52/52</b><small>tests</small></span><span><b>v0.8.1</b><small>shipped</small></span></div><p class="impact-note">The maintainer noted that the project had not previously been run on Windows and that one of the bugs was structurally invisible to CI.</p></div>
-<div class="impact-links"><a class="text-link" href="https://github.com/kiril6/vibeaudio/pull/10" rel="external noopener noreferrer" target="_blank">PR #10 ↗</a><a class="text-link" href="https://github.com/kiril6/vibeaudio/pull/11" rel="external noopener noreferrer" target="_blank">PR #11 ↗</a><a class="text-link" href="https://github.com/kiril6/vibeaudio/releases/tag/v0.8.1" rel="external noopener noreferrer" target="_blank">Release v0.8.1 ↗</a></div>
+<article class="repo-card repo-impact glow-card reveal" data-latest-contribution>
+<div class="impact-copy">
+<div class="project-kicker"><span class="repo-badge">Latest upstream</span><span data-latest-meta>GitHub · loading…</span></div>
+<h4 data-latest-title>Loading the latest merged contribution…</h4>
+<p>The latest merged contribution to another open-source project is highlighted here automatically.</p>
+<div class="impact-stats"><span><b data-latest-repo>—</b><small>repo</small></span><span><b data-latest-pr>—</b><small>PR</small></span><span><b data-latest-date>—</b><small>merged</small></span></div>
+<p class="impact-note">When a new upstream contribution is merged, this card automatically switches to it while earlier contributions remain in the list below.</p>
+</div>
+<div class="impact-links"><a class="text-link" data-latest-link href="#" rel="external noopener noreferrer" target="_blank" hidden>View PR ↗</a></div>
 </article>
 <article class="repo-card repo-contributions glow-card reveal">
 <div class="contribution-head">
 <div>
 <div class="project-kicker"><span class="repo-badge">Merged PR</span><span>GitHub · external projects</span></div>
 <h4>Merged contributions</h4>
-<p><strong class="contribution-count" data-contribution-count>—</strong> merged PRs total · showing the 5 latest.</p>
+<p><strong class="contribution-count" data-contribution-count>—</strong> merged PRs total · latest highlighted above, showing up to 5 more below.</p>
 </div>
 <a class="text-link contribution-all-link" href="https://github.com/search?q=is%3Apr+author%3AQvarcY+is%3Amerged+-user%3AQvarcY&amp;type=pullrequests" rel="external noopener noreferrer" target="_blank">View on GitHub ↗</a>
 </div>
@@ -702,6 +708,9 @@
   data-pr-label="PR"
   data-merged-label="Merged"
   data-error-label="Could not load contribution history."
+  data-empty-label="No other merged contributions yet."
+  data-latest-empty-label="No merged upstream contributions yet."
+  data-latest-error-label="Could not load the latest contribution."
 >
 <p class="contribution-loading">Loading contributions…</p>
 </div>
